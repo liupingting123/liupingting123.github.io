@@ -1,0 +1,49 @@
+define(function() {
+	return {
+		"QueryHotProductListDtos": [{
+			"Id": 2522,
+			"SubjectName": "保税仓：Bubchen德国宝比珊贝恩小公主泡泡浴230ml",
+			"SujectDesc": "惠氏金装3段低至118元",
+			"ApplyPlace": "[1][9]",
+			"PictureUrl": "img/bk-img01.jpg",
+			"SetDiscountTypeId": 1,
+			"SetDiscount": "105",
+			"OriDiscount": "￥39.00",
+			"ReOriDiscount": "",
+			"StartTime": "\/Date(1474905600000-0000)\/",
+			"EndTime": "\/Date(1475942399000-0000)\/",
+			"IsEnable": true,
+			"IsDeleted": false,
+			"CreateBy": 888,
+			"CreateDate": "\/Date(1474963312753-0000)\/",
+			"UpdateBy": 888,
+			"UpdateDate": "\/Date(1474963312753-0000)\/",
+			"Sort": 2373,
+			"AppClickUrl": "http://m.muyingzhijia.com/Activity/ActivePage?id=1050"
+		}, {
+			"Id": 2513,
+			"SubjectName": "保税仓：moony尤妮佳婴幼儿纸尿裤M64片适用6-11kg",
+			"SujectDesc": "满129送奶瓶刷  满199送香皂",
+			"ApplyPlace": "[1][6][9]",
+			"PictureUrl": "img/bk-img02.jpg",
+			"SetDiscountTypeId": 1,
+			"SetDiscount": "105",
+			"OriDiscount": "￥105",
+			"ReOriDiscount": "",
+			"StartTime": "\/Date(1474387200000-0000)\/",
+			"EndTime": "\/Date(1475337599000-0000)\/",
+			"IsEnable": true,
+			"IsDeleted": false,
+			"CreateBy": 888,
+			"CreateDate": "\/Date(1474450886033-0000)\/",
+			"UpdateBy": 888,
+			"UpdateDate": "\/Date(1474952828477-0000)\/",
+			"Sort": 2352,
+			"AppClickUrl": "http://m.muyingzhijia.com/Activity/ActivePage?id=1030"
+		}],
+		"Total": 38,
+		"Sum": 38,
+		"ResponseStatus": {},
+		"DoFlag": true
+	}
+})

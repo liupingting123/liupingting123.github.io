@@ -1,1 +1,230 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>母婴之家</title>
+	<script data-main="js/config" src="js/require.js" defer async="true" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+	<link rel="shortcut icon" href="favicon.ico">
+</head>
+<body>
+<div id="body">              
+    <div class="header">
+        <div class="hd_left hd_logo">
+            <img src="img/logo.png" /></div>
+        <div class="hd_title hd_search">
+            <span><i class="icon iconfont">&#xe604;</i></span>
+            <input type="text" placeholder="搜索" id="ckSearch" />
+        </div>
+    </div>
+
+    <div class="content">
+ 		<!-- //轮播 -->
+        <div class="swiper-container">
+	        <script id="slider_list" type="text/html">
+	        <div class="swiper-wrapper">
+	        	{{each DataList as value i}}
+	            <div class="swiper-slide" style="background-image:url({{value.SmallPic}})"></div>
+	            {{/each}}
+	        </div>
+	        <div class="swiper-pagination"></div>
+	        </script>
+    	</div>
+        
+        <div class="adv">
+        <span class="tips_notice">公告</span>
+        <div class="adv_article">
+            <label>关于国庆期间保税仓商品发货的通知</label>
+        </div>
+        </div>
+        
+        <!-- icon图标 -->
+        <div class="nav">
+			<script id="test" type="text/html">
+				<ul>
+					{{each DataList as value i}}
+							<li><dl><dt><img src="{{value.SmallPic}}" alt="" /></dt><dd>{{value.Title}}</dd></dl></li>
+					{{/each}}
+				</ul>
+			</script>
+		</div>
+
+
+		<!-- 今日活动 -->
+        <div class="today_activity">
+	        <div class="today_title">
+	            <span><img src="img/h-left-girl.png"/></span>   
+	            <h3>今日活动</h3>    
+	        </div>  
+
+	        <div class="today_list">
+	        	<script id="today_list" type="text/html">
+	        		{{each DataList as value i}}
+	        			<div class="list_item"><img src="{{value.SmallPic}}" alt="" /></div>
+	        		{{/each}}
+	        	</script>
+	        </div>     
+	    </div>
+
+	    <div class="main_title">
+	        <h2>
+	            <span>今日专场</span>
+	        </h2>
+    	</div>
+
+    	<div class="main_list">
+			<script id="test_main_list" type="text/html">
+				<ul>
+					{{each QueryHotProductSpecialListDtos as value i}}
+							<li><a>
+							<div class="main_img_info">
+							<img src="{{value.PictureUrl}}" alt="" />
+							<div class="time">
+                                <span><img src="img/h-time.png "/></span>
+                                <span>剩余2天</span>
+                            </div>
+							</div>
+							<div class="main_text_info">
+	        				<span>{{value["SubjectName"]}}</span>
+	        				<span>{{value["OriDiscount"]}}</span>
+	        			</div></a>
+							</li>
+					{{/each}}
+				</ul>
+			</script>
+		</div>
+		 <div class="main_title">
+	        <h2>
+	            <span>精选爆款</span>
+	        </h2>
+    	</div>
+		<div class="jinxuan_main_list">
+			<script id="jx_main_list" type="text/html">
+				<ul>
+					{{each QueryHotProductListDtos as value i}}
+							<li><a>
+							<div class="main_img_info">
+							<img src="{{value.PictureUrl}}" alt="" />
+							<div class="time">
+                                <span><img src="img/h-time.png "/></span>
+                                <span>剩余2天</span>
+                            </div>
+							</div>
+							<div class="main_text_info">
+	        				<span>{{value["SubjectName"]}}</span>
+	        				<span>{{value["OriDiscount"]}}</span>
+	        			</div></a>
+							</li>
+					{{/each}}
+				</ul>
+			</script>
+		</div>
+    	
+
+
+		<div class="main_title">
+	        <h2>
+	            <span>今日特卖</span>
+	        </h2>
+    	</div>
+    	<div class="special_sale">
+			<script id="sp_main_list" type="text/html">
+				<ul>
+				{{each QueryPageSpecialShowResults as value i}}
+					<li>
+					{{each value["SpecialProductResults"] as spec j}}
+					<div class="main_img_info">
+					<img src="{{spec.ProductImage}}" alt="" />
+					<em>¥{{spec.SalePrice}}</em>
+					</div>
+					{{/each}}
+					<div class="sale_info_1">
+					<span></span>
+					{{each value["SpecialShowActivityResults"] as ac m}}
+	                {{if ac["ActivityType"]==0}}
+	                满{{ac["UpAmount"]}}减{{ac["CutAmount"]}}
+	                {{/if}}
+	                {{if ac["ActivityType"]==1}}
+	                满{{ac["UpPackages"]}}件打{{ac["Discount"]}}折
+	                {{/if}}
+	                {{/each}}
+				    </div>
+
+				    <div class="sale_info_2">
+    					<span class="sale_info_logo"><img src="{{value.BrandLogo}}"></span>
+    					<span class="sale_info_text"><p>{{value["ShowName"]}}</p>
+    					<p>剩余{{value["VendorId"]}}天<a>({{value["TotalProNum"]}}件)
+    					</p>
+    					</span>
+    					<span class="brand_percent">{{value["DiscountUp"]}}折起</span>
+					</div>
+					</a>
+					</li>
+				{{/each}}
+				</ul>
+			</script>
+		</div>	
+ 
+    </div>
+
+
+
+<div class="footer_menu">
+    <ul>
+        <li>
+            <dl>
+                <dt></dt>
+                <dd>首页</dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt></dt>
+                <dd>分类</dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt></dt>
+                <dd>购物车</dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+                <dt></dt>
+                <dd>账户</dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+      
+</div>
+<script type="text/javascript">
+	
+</script>
+<script type="text/javascript">
+	//		require(['js/config'],function(){
+	require(['controller/index'])
+		//		})
+</script>
+</body>
+</html>
+<script type="text/javascript">
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+			            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+			            recalc = function () {
+			                var clientWidth = docEl.clientWidth;
+			                if (!clientWidth) return;
+			                if (clientWidth > 640) clientWidth = 640;
+			                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+			            };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+   
+</script>
