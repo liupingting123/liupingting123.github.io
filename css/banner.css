@@ -1,0 +1,71 @@
+.banner{
+	width: 730px;
+	height: 454px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;	
+}
+
+.banner:hover .btn_pn{
+	display: block;
+}
+.img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 3650px;
+	height: 454px;
+	overflow: hidden;
+}
+.img li{
+	float: left;
+	width: 730px;
+}
+img{width: 100%;}
+.num{
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	text-align: center;
+}
+.num li{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background-color: #404040 ;
+	color: #fff;
+	text-align: center;
+	line-height: 20px;
+	border-radius: 20px;
+	cursor: pointer;
+}
+.btn{
+	display: block;
+
+}
+.btn_pn{
+	position: absolute;
+	width: 30px;
+	height: 60px;
+	background: rgba(0,0,0,0.3);
+	top: 50%;
+	margin-top: -30px;
+	cursor: pointer;
+	text-align: center;
+	line-height: 62px;
+	display: none;
+}
+.prev{
+	left: 0;
+}
+.next{
+	right: 0;
+}
+.btn img{
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
+}
+.select{
+	background: #A00000 !important;
+}
